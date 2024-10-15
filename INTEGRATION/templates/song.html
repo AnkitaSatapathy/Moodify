@@ -1,0 +1,30 @@
+<html>
+    <body bgcolor="#d4a3ae">
+        <center>
+            <h1> Song Recommendation </h1><br>
+            <form method="POST" action="{{ url_for('song') }}">
+                <b> Age : <input type="text" name='a' placeholder="enter 1"> <br><br>
+                    Hours per day : <input type="text" name='b' placeholder="enter 2"> <br><br>
+                    Exploratory : <input type="text" name='c' placeholder="enter 0 or 1"> <br><br>
+                    Foreign languages : <input type="text" name='d' placeholder="enter 0 or 1"> <br><br>
+                    BPM : <input type="text" name='e' placeholder="enter 100"> <br><br>
+                    Frequency [Classical] : <input type="text" name='f' placeholder="enter 3"> <br><br>
+                    Frequency [Country] : <input type="text" name='g' placeholder="enter 1 or 0"> <br><br>
+                    Frequency [K pop] : <input type="text" name='h' placeholder="enter 1 or 0"> <br><br>
+                    Frequency [Pop] : <input type="text" name='i' placeholder="enter 1 or 0"> <br><br>
+                    Frequency [Rap] : <input type="text" name='j' placeholder="enter 1 or 0"> <br><br>
+                    Frequency [Rock] : <input type="text" name='k' placeholder="enter 1 or 0"> <br><br>
+                    Anxiety : <input type="text" name='l' placeholder="enter 1 or 0"> <br><br>
+                    Depression : <input type="text" name='m' placeholder="enter 1 or 0"> <br><br>
+                    Insomnia : <input type="text" name='n' placeholder="enter 1 or 0"> <br><br>
+                    OCD : <input type="text" name='o' placeholder="enter 100"> <br><br></b>
+                <input type="submit" value='Predict'>
+            </form>
+
+            <h1> Prediction: </h1>
+            <p>{{ data }}</p> <!-- Display prediction result -->
+
+            <a href="{{ url_for('home') }}">Take Another Test</a>
+        </center>
+    </body>
+</html>

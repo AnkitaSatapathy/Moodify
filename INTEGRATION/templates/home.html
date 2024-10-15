@@ -1,0 +1,31 @@
+<html>
+    <body bgcolor="#d4a3ae">
+        <center>
+            <h1> Mental Health Detection</h1><br>
+            <form method="POST" action="{{ url_for('predict') }}">
+                <b> Sadness : <input type="text" name='a' placeholder="enter 1"> <br><br>
+                Euphoric : <input type="text" name='b' placeholder="enter 2"> <br><br>
+                Exhausted : <input type="text" name='c' placeholder="enter 3"> <br><br>
+                Sleep disorder : <input type="text" name='d' placeholder="enter 4"> <br><br>
+                Mood Swing : <input type="text" name='e' placeholder="enter 1 or 0"> <br><br>
+                Suicidal thoughts : <input type="text" name='f' placeholder="enter 1 or 0"> <br><br>
+                Anorexia : <input type="text" name='g' placeholder="enter 1 or 0"> <br><br>
+                Authority Respect : <input type="text" name='h' placeholder="enter 1 or 0"> <br><br>
+                Try-Explanation : <input type="text" name='i' placeholder="enter 1 or 0"> <br><br>
+                Aggressive Response : <input type="text" name='j' placeholder="enter 1 or 0"> <br><br>
+                Ignore & Move-On : <input type="text" name='k' placeholder="enter 1 or 0"> <br><br>
+                Nervous Breakdown : <input type="text" name='l' placeholder="enter 1 or 0"> <br><br>
+                Admit Mistakes : <input type="text" name='m' placeholder="enter 1 or 0"> <br><br>
+                Overthinking : <input type="text" name='n' placeholder="enter 1 or 0"> <br><br>
+                Concentration : <input type="text" name='o' placeholder="enter 100"> <br><br>
+                Optimism : <input type="text" name='p' placeholder="enter 10"> <br><br></b>
+                <input type="submit" value='Predict'>
+            </form>
+
+            <h1> Prediction: </h1>
+            <p>{{ data }}</p> <!-- Display prediction result -->
+
+            <a href="{{ url_for('song_page') }}">Go to Song Recommendation</a>
+        </center>
+    </body>
+</html>
