@@ -1,31 +1,163 @@
-<html>
-    <body bgcolor="#d4a3ae">
-        <center>
-            <h1> Mental Health Detection</h1><br>
-            <form method="POST" action="{{ url_for('predict') }}">
-                <b> Sadness : <input type="text" name='a' placeholder="enter 1"> <br><br>
-                Euphoric : <input type="text" name='b' placeholder="enter 2"> <br><br>
-                Exhausted : <input type="text" name='c' placeholder="enter 3"> <br><br>
-                Sleep disorder : <input type="text" name='d' placeholder="enter 4"> <br><br>
-                Mood Swing : <input type="text" name='e' placeholder="enter 1 or 0"> <br><br>
-                Suicidal thoughts : <input type="text" name='f' placeholder="enter 1 or 0"> <br><br>
-                Anorexia : <input type="text" name='g' placeholder="enter 1 or 0"> <br><br>
-                Authority Respect : <input type="text" name='h' placeholder="enter 1 or 0"> <br><br>
-                Try-Explanation : <input type="text" name='i' placeholder="enter 1 or 0"> <br><br>
-                Aggressive Response : <input type="text" name='j' placeholder="enter 1 or 0"> <br><br>
-                Ignore & Move-On : <input type="text" name='k' placeholder="enter 1 or 0"> <br><br>
-                Nervous Breakdown : <input type="text" name='l' placeholder="enter 1 or 0"> <br><br>
-                Admit Mistakes : <input type="text" name='m' placeholder="enter 1 or 0"> <br><br>
-                Overthinking : <input type="text" name='n' placeholder="enter 1 or 0"> <br><br>
-                Concentration : <input type="text" name='o' placeholder="enter 100"> <br><br>
-                Optimism : <input type="text" name='p' placeholder="enter 10"> <br><br></b>
-                <input type="submit" value='Predict'>
-            </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Mental Health Guide</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .custom-banner {
+      background-image: url('http://127.0.0.1:5000/static/933d567b-76ab-40c4-b290-114f3e989c45.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+        font-family: Montserrat, sans-serif;
+          font-weight: 700; /* Bold */
+          font-size: 50px;
+        }
+      section h1 {
+        font-family: Playfair Display, serif;
+        font-weight: 400; /* Bold */
+          font-size: 40px;
+      }
+      .text-black{
+        font-size: 30px;
+      }
+      .popup {
+        display: none;
+        position: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        font-weight:300;
+        padding: 6px;
+        font-size:20px;
+        z-index: 999;
+        width:50%;
+      }
+  
+  </style>
+</head>
+<body>
+  <header>
+    </header>
 
-            <h1> Prediction: </h1>
-            <p>{{ data }}</p> <!-- Display prediction result -->
+  <section class="custom-banner flex items-center justify-center">
+    <div class="text-center text-black">
+      <h1 class="text-5xl font-bold font-montserrat">GET TESTED</h1>
+      <p class="mt-4 text-xl text-white">Boost your mental health</p>
+    </div>
+  </section>
 
-            <a href="{{ url_for('song_page') }}">Go to Song Recommendation</a>
-        </center>
-    </body>
+  <section style="background-image: linear-gradient(to right, #97d3d4, #ffe0b2);" class="py-12">
+    <div class="container mx-auto px-6">
+      <center>
+        <h1 class="text-black font-playfair-display">Mental Health Detection</h1><br>
+        <form method="POST" action="predict" class="text-black">
+          <b>
+            Sadness: <input type="text" name='a' placeholder="Enter a value from 1-4" class="mt-2 mb-4"><br>
+            <span class="popup" id="sadness-popup">
+                <p>  1--Seldom   2--Sometimes   3--Most-Often   4--Usually</p>
+              </span>
+            Euphoric: <input type="text" name='b' placeholder="Enter a value from 1-4" class="mt-2 mb-4"><br>
+            <span class="popup" id="euphoric-popup">
+                <a>1--Seldom</a>
+                <a>2--Sometimes</a>
+                <a>3--Most-Often</a>
+                 <a>4--Usually</a>
+              </span>
+            Exhausted: <input type="text" name='c' placeholder="Enter a value from 1-4" class="mt-2 mb-4"><br>
+            <span class="popup" id="exhausted-popup">
+                <a>1--Seldom</a>
+                <a>2--Sometimes</a>
+                <a>3--Most-Often</a>
+                 <a>4--Usually</a>
+              </span>
+            Sleep disorder: <input type="text" name='d' placeholder="Enter a value from 1-4" class="mt-2 mb-4"><br>
+            <span class="popup" id="sleep-popup">
+                <a>1--Seldom</a>
+                <a>2--Sometimes</a>
+                <a>3--Most-Often</a>
+                 <a>4--Usually</a>
+              </span>
+            Mood Swing: <input type="text" name='e' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="mood-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Suicidal thoughts: <input type="text" name='f' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="suicide-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Anorexia: <input type="text" name='g' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="Anorexia-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Authority Respect: <input type="text" name='h' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="authorityRespect-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Try-Explanation: <input type="text" name='i' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="TryExplanation-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Aggressive Response: <input type="text" name='j' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="AggressiveResponse-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Ignore & Move-On: <input type="text" name='k' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="Ignore-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Nervous Breakdown: <input type="text" name='l' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="nervous-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Admit Mistakes: <input type="text" name='m' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="suicide-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Overthinking: <input type="text" name='n' placeholder="Enter 1 or 0" class="mt-2 mb-4"><br>
+            <span class="popup" id="Overthinking-popup">
+                <a>0--No</a>
+                <a>1-Yes</a>
+              </span>
+            Concentration: <input type="text" name='o' placeholder="Enter a value from 1-10" class="mt-2 mb-4"><br>
+            Optimism: <input type="text" name='p' placeholder="Enter a value from 1-10" class="mt-2 mb-4"><br>
+          </b>
+          <input type="submit" value='Predict' class="bg-black text-white py-2 px-4 rounded">
+        </form>
+
+        <script>
+            const inputFields = document.querySelectorAll('input[type="text"]');
+            const popups = document.querySelectorAll('.popup');
+        
+            inputFields.forEach((input, index) => {
+              input.addEventListener('focus', () => {
+                popups[index].style.display = 'block';
+              });
+        
+              input.addEventListener('blur', () => {
+                popups[index].style.display = 'none';
+              });
+            });
+          </script>
+        <h1 class="text-black font-playfair-display">Prediction:</h1>
+        <p class="text-black">{{ data }}</p> <a href="http://127.0.0.1:5000/song-page" class="text-black underline">Go to Song Recommendation</a>
+        <p class="text-black"></p> <a href="http://127.0.0.1:5500/INTEGRATION/templates/index.html" class="text-black underline">Go to Home Page</a>
+      </center>
+    </div>
+  </section>
+</div>
+</body>
 </html>
