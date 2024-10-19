@@ -1,30 +1,65 @@
-<html>
-    <body bgcolor="#d4a3ae">
-        <center>
-            <h1> Song Recommendation </h1><br>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background</title>
+    <style>
+        body {
+            background: #FEF3E2; /* Blueish green gradient */
+            height: 100vh; 
+            margin: 0; /* Removes any default margin */
+        }
+        img {
+            width: 100%; 
+            height: 350px; 
+            object-fit: cover; 
+        }
+        h1 {
+            position: absolute; 
+            top: 25%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            font-size: 60px;
+            color: #9b522f; 
+            text-align: center; 
+            line-height: 0.9;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <img src="http://127.0.0.1:5000/static/pic.jpg" alt="Banner Image" style = "border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+
+    <center><br>
+        <h1 style="font-size: 75px;">Song Recommendation</h1><br>
             <form method="POST" action="{{ url_for('song') }}">
-                <b> Age : <input type="text" name='a' placeholder="enter 1"> <br><br>
-                    Hours per day : <input type="text" name='b' placeholder="enter 2"> <br><br>
-                    Exploratory : <input type="text" name='c' placeholder="enter 0 or 1"> <br><br>
-                    Foreign languages : <input type="text" name='d' placeholder="enter 0 or 1"> <br><br>
-                    BPM : <input type="text" name='e' placeholder="enter 100"> <br><br>
-                    Frequency [Classical] : <input type="text" name='f' placeholder="enter 3"> <br><br>
-                    Frequency [Country] : <input type="text" name='g' placeholder="enter 1 or 0"> <br><br>
-                    Frequency [K pop] : <input type="text" name='h' placeholder="enter 1 or 0"> <br><br>
-                    Frequency [Pop] : <input type="text" name='i' placeholder="enter 1 or 0"> <br><br>
-                    Frequency [Rap] : <input type="text" name='j' placeholder="enter 1 or 0"> <br><br>
-                    Frequency [Rock] : <input type="text" name='k' placeholder="enter 1 or 0"> <br><br>
-                    Anxiety : <input type="text" name='l' placeholder="enter 1 or 0"> <br><br>
-                    Depression : <input type="text" name='m' placeholder="enter 1 or 0"> <br><br>
-                    Insomnia : <input type="text" name='n' placeholder="enter 1 or 0"> <br><br>
-                    OCD : <input type="text" name='o' placeholder="enter 100"> <br><br></b>
+                <b style="font-size: 30px;"> Age : <input type="text" name='a' placeholder="  enter your age" style="height: 30px;"> <br><br>
+                    Hours per day : <input type="text" name='b' placeholder="  How many hours do you listen to music for?" style="height: 30px; width: 300px" > <br><br>
+                    Do you explore multiple genres : <input type="text" name='c' placeholder=" enter 0 if NO or 1 if YES" style="height: 30px; width: 200px"> <br><br>
+                    Do you enjoy multiple languages : <input type="text" name='d' placeholder="  enter 0 if NO or 1 if YES" style="height: 30px; width: 200px"> <br><br>
+                    BPM : <input type="text" name='e' placeholder="  enter a value between 0-160" style="height: 30px; width: 250px"> <br><br>
+                    <a style="padding-left: 40px; padding-right: 40px; font-size: 24px;">
+                        How often do you listen to the following music genres (1 represents less frequently and 4 represents more frequently):
+                    </a><br>
+                    Classical [] : <input type="text" name='f' placeholder="  enter 1-4" style="height: 30px;">
+                    <br><br>
+                    Frequency [Country] : <input type="text" name='g' placeholder="  enter 1-4" style="height: 30px;"> <br><br>
+                    Frequency [K pop] : <input type="text" name='h' placeholder="  enter 1-4" style="height: 30px;"> <br><br>
+                    Frequency [Pop] : <input type="text" name='i' placeholder="  enter 1-4" style="height: 30px;"> <br><br>
+                    Frequency [Rap] : <input type="text" name='j' placeholder="  enter 1-4" style="height: 30px;"> <br><br>
+                    Frequency [Rock] : <input type="text" name='k' placeholder="  enter 1-4" style="height: 30px;"> <br><br>
+                    Anxiety : <input type="text" name='l' placeholder="  enter a value from 0-10" style="height: 30px;"> <br><br>
+                    Depression : <input type="text" name='m' placeholder="  enter a value from 0-10" style="height: 30px;"> <br><br>
+                    Insomnia : <input type="text" name='n' placeholder="  enter a value from 0-10" style="height: 30px;"> <br><br>
+                    OCD : <input type="text" name='o' placeholder="  enter a value from 0-10" style="height: 30px;"> <br><br></b>
                 <input type="submit" value='Predict'>
             </form>
-
-            <h1> Prediction: </h1>
+        <h2> Prediction: </h2>
             <p>{{ data }}</p> <!-- Display prediction result -->
 
-            <a href="{{ url_for('home') }}">Take Another Test</a>
-        </center>
-    </body>
+            <a href="http://127.0.0.1:5000/">Take Another Test</a>
+            <p class="text-black"></p> <a href="http://127.0.0.1:5500/INTEGRATION/templates/index.html" class="text-black underline">Go to Home Page</a>
+    </center>
+</body>
 </html>
