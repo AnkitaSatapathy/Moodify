@@ -12,7 +12,7 @@
                     colors: {
                          'custom': '#CAF4FF',
                         'primary': '#3AA6B9',
-                        'secondary': '#D2649A',
+                        'secondary': '#F0C1E1',
                     },
                     container: {
                         center: true,
@@ -37,8 +37,10 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gradient-to-r from-primary via-custom to-secondary">
     <header-component></header-component>
+</body>
+</html>
 
     <main>
         <hero-section></hero-section>
@@ -56,9 +58,9 @@
         class Header extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `
-                    <header class="bg-white shadow-md">
+                    <header class="bg-[#FFD0D0]">
                         <nav class="container mx-auto px-6 py-3">
-                            <body style="background-color: #C5EBAA;">
+                            <body style="background-color:#FFB6C1;">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
                                     <img src="https://cdn4.vectorstock.com/i/1000x1000/83/13/ai-digital-brain-concept-blue-icon-or-logo-element-vector-22508313.jpg" alt="Mental Health AI Logo" class="h-10 w-10 mr-3">
@@ -126,7 +128,7 @@
         class AboutSection extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `
-                    <section id="about" class="py-16 bg-white">
+                    <section id="about" class="py-16 bg-gradient-to-r from-[#BCF2F6] to-[#FFB6C1]">
                         <div class="container mx-auto px-6">
                             <h2 class="text-3xl font-semibold text-center mb-8">About Moodify</h2>
                             <div class="flex flex-col md:flex-row items-center justify-between">
@@ -134,7 +136,7 @@
                                     <img src="https://www.techslang.com/wp-content/uploads/2020/08/image-from-rawpixel-id-593117-jpeg.jpg" alt="About Moodify" class="rounded-lg shadow-lg">
                                 </div>
                                 <div class="md:w-1/2 md:pl-8">
-                                    <p class="text-gray-700 mb-4">Moodify is at the forefront of revolutionizing mental health care through cutting-edge artificial intelligence along with recommedations such as personalized music choices. Our mission is to make mental health support accessible, personalized, and effective for everyone.</p>
+                                    <p class="text-gray-700 mb-4">Moodify is at the forefront of revolutionizing mental health care through cutting-edge artificial intelligence along with recommendations such as personalized music choices. Our mission is to make mental health support accessible, personalized, and effective for everyone.</p>
                                     <p class="text-gray-700 mb-4">We combine the expertise of mental health professionals with advanced AI algorithms to provide accurate diagnoses, personalized treatment plans, and ongoing support.</p>
                                     <p class="text-gray-700">Our team of dedicated professionals and AI specialists work tirelessly to ensure that you receive the best possible care and support on your mental health journey.</p>
                                 </div>
@@ -148,7 +150,7 @@
         class DiagnosisSection extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `
-                    <section id="diagnosis" class="py-16 bg-gray-100">
+                    <section id="diagnosis" class="py-16 bg-gradient-to-r from-[#BCF2F6] to-[#FFB6C1]">
                         <div class="container mx-auto px-6">
                             <h2 class="text-3xl font-semibold text-center mb-8">Diagnosis</h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -185,7 +187,7 @@
         class ChatbotSupportSection extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `
-                    <section id="chatbot" class="py-16 bg-white">
+                    <section id="chatbot" class="py-16 bg-gradient-to-r from-[#BCF2F6] to-[#FFB6C1]">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-semibold text-center mb-8">24/7 Chat Support</h2>
                 <div class="max-w-2xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
@@ -207,7 +209,7 @@
         class MusicTherapySection extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `
-        <section id="music" class="py-16 bg-gray-100">
+        <section id="music" class="py-16 bg-gradient-to-r from-[#BCF2F6] to-[#FFB6C1]">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-semibold text-center mb-8">Music Therapy</h2>
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
@@ -247,14 +249,14 @@
     class ResourcesSection extends HTMLElement {
         connectedCallback() {
             this.innerHTML = `
-                <section id="resources" class="min-h-screen py-16 bg-white">
+                <section id="resources" class="min-h-screen py-16 bg-gradient-to-r from-[#BCF2F6] to-[#FFB6C1]"">
                     <div class="container mx-auto px-6">
                         <h2 class="text-3xl font-semibold text-center mb-8">Mental Health Resources</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <div class="bg-gray-100 rounded-lg p-6">
                                 <h3 class="text-xl font-semibold mb-4">Articles</h3>
                                 <ul class="space-y-2">
-                                    <li><a href="#" class="text-primary hover:underline">Understanding Anxiety Disorders</a></li>
+                                    <li><a href="https://www.psychiatry.org/patients-families/anxiety-disorders/what-are-anxiety-disorders" class="text-primary hover:underline">Understanding Anxiety Disorders</a></li>
                                     <li><a href="#" class="text-primary hover:underline">Coping Strategies for Depression</a></li>
                                     <li><a href="#" class="text-primary hover:underline">The Importance of Self-Care</a></li>
                                     <li><a href="#" class="text-primary hover:underline">Building Resilience in Difficult Times</a></li>
@@ -263,7 +265,7 @@
                             <div class="bg-gray-100 rounded-lg p-6">
                                 <h3 class="text-xl font-semibold mb-4">Videos</h3>
                                 <ul class="space-y-2">
-                                    <li><a href="#" class="text-primary hover:underline">Guided Meditation for Stress Relief</a></li>
+                                    <li><a href="<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tuPW7oOudVc?si=G7ylOUbNYKw4pJli" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>" class="text-primary hover:underline">Guided Meditation for Stress Relief</a></li>
                                     <li><a href="#" class="text-primary hover:underline">Understanding Cognitive Behavioral Therapy</a></li>
                                     <li><a href="#" class="text-primary hover:underline">Mindfulness Techniques for Daily Life</a></li>
                                     <li><a href="#" class="text-primary hover:underline">Overcoming Social Anxiety</a></li>
@@ -272,10 +274,10 @@
                             <div class="bg-gray-100 rounded-lg p-6">
                                 <h3 class="text-xl font-semibold mb-4">Support Groups</h3>
                                 <ul class="space-y-2">
-                                    <li><a href="#" class="text-primary hover:underline">Depression Support Group</a></li>
-                                    <li><a href="#" class="text-primary hover:underline">Anxiety and Panic Disorder Forum</a></li>
-                                    <li><a href="#" class="text-primary hover:underline">PTSD Recovery Network</a></li>
-                                    <li><a href="#" class="text-primary hover:underline">Addiction Recovery Community</a></li>
+                                    <li><a href="https://www.dbsalliance.org/support/chapters-and-support-groups/online-support-groups/" class="text-primary hover:underline">Depression Support Group</a></li>
+                                    <li><a href="https://www.mentalhealthforum.net/forum/forums/panic-disorder-and-agoraphobia-forum.43/" class="text-primary hover:underline">Anxiety and Panic Disorder Forum</a></li>
+                                    <li><a href="https://www.myptsd.com/" class="text-primary hover:underline">PTSD Recovery Network</a></li>
+                                    <li><a href="https://indianhelpline.com/de-addiction-helpline" class="text-primary hover:underline">Addiction Recovery Community</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -291,7 +293,7 @@
     class ContactSection extends HTMLElement {
         connectedCallback() {
             this.innerHTML = `
-                <section id="contact" class="min-h-screen py-16 bg-gray-100">
+                <section id="contact" class="min-h-screen py-16 bg-gradient-to-r from-[#BCF2F6] to-[#FFB6C1]"">
                     <div class="container mx-auto px-6">
                         <h2 class="text-3xl font-semibold text-center mb-8">Contact Us</h2>
                         <div class="max-w-2xl mx-auto">
@@ -352,8 +354,6 @@
                                     <ul class="text-sm">
                                         <li><a href="#" class="hover:text-primary">Blog</a></li>
                                         <li><a href="#" class="hover:text-primary">FAQs</a></li>
-                                        <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
-                                        <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
                                     </ul>
                                 </div>
                                 <div class="w-full md:w-1/4">
@@ -402,22 +402,58 @@
          });
  
          // Chatbot functionality
-         const chatMessages = document.getElementById('chat-messages');
-         const userInput = document.getElementById('user-input');
-         const sendButton = document.getElementById('send-message');
- 
-         sendButton.addEventListener('click', () => {
-             const message = userInput.value.trim();
-             if (message) {
-                 addMessage('You', message);
-                 // Simulate AI response (replace with actual AI integration)
-                 setTimeout(() => {
-                     addMessage('AI', 'Thank you for your message. How can I assist you further?');
-                 }, 1000);
-                 userInput.value = '';
-             }
-         });
- 
+         // Chatbot functionality for mental health support
+const chatMessages = document.getElementById('chat-messages');
+const userInput = document.getElementById('user-input');
+const sendButton = document.getElementById('send-message');
+
+// Sample responses for a mental health chat support
+const responses = [
+    "It's great that you're reaching out. How are you feeling today?",
+    "I'm here to listen. What’s on your mind?",
+    "It’s okay to talk about what you’re going through. Please share.",
+    "Remember, you're not alone. I'm here to support you.",
+    "Taking the first step is important. What would you like to discuss?",
+    "Maybe if you started to address questions of an inner nature of what changed in your life as a result of the back problem.To know your limitations and the areas of your life which they affect, will greatly contribute to stronger self-knowledge within you.Greater awareness and sense of direction very often decreases depression",
+    "Your feelings are valid. Let's talk about what you're experiencing.",
+    "Have you used meditation or hypnosis? Relaxing the mind and connecting with your true self is a great way to calm your thoughts and get to peace and calm. Hypnosis and meditation have helped a lot of people with anxiety and depression. Google hypnotherapists near me or write for a while about what is going on",
+    "It's perfectly okay to feel the way you do. I'm here for you.",
+    "Check this blog out: 'How to Develop Self-Esteem by wikiHow' .Hope you find a few nuggets of helpfulness in this",
+    "I would suggest some holistic approaches, such as getting your Vitamin D and iron levels checked. Make sure you are eating well, exercising, and getting outside when you can. Take a trip to someplace warm if possible. Use a sun lamp in the morning for 30 minutes to simulate sunlight. Seek professional health to gain coping skills and other ways to manage symptoms",
+    "Talking can be a helpful way to process your thoughts. What would you like to say?",
+    "It's important to express your feelings. What’s been bothering you?",
+    "I'm glad you decided to chat. What’s been on your mind lately?",
+    "Maybe right now it is time for you to rest before the next wave of new activity comes along.To have no interest may mean you are already so saturated with recent situations and their meaning that you are naturally withdrawing in order to regain your energy",
+    "Sometimes sharing can lighten the load. How can I help you today?",
+    "You deserve to feel heard. What would you like to talk about?",
+    "One way to know yourself a little better and why the dynamics you describe take place, is to understand the particular dynamics of your life context.Look at your major areas of where you spend your time, whether you are happy with the people with whom you socialize, how you feel toward family members and how they seem to feel toward you",
+    "I’m here to support you. Let’s take it one step at a time."
+];
+sendButton.addEventListener('click', () => {
+    const message = userInput.value.trim();
+    if (message) {
+        addMessage('You', message);
+        
+        // Simulate AI response
+        setTimeout(() => {
+            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+            addMessage('AI', randomResponse);
+        }, 1000);
+        
+        userInput.value = '';
+    }
+});
+
+// Function to add messages to the chat
+function addMessage(sender, message) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom
+}
+
+         
          function addMessage(sender, message) {
              const messageElement = document.createElement('div');
              messageElement.classList.add('mb-2');
